@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		52D6D9871BEFF229002C0205 /* Panels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Panels.framework */; };
+		617DA44823857E3300F8DDF4 /* Panelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617DA44023857E3300F8DDF4 /* Panelable.swift */; };
+		617DA44923857E3300F8DDF4 /* UIStoryBoard+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617DA44223857E3300F8DDF4 /* UIStoryBoard+Utils.swift */; };
+		617DA44A23857E3300F8DDF4 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617DA44323857E3300F8DDF4 /* UIView+Utils.swift */; };
+		617DA44B23857E3300F8DDF4 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617DA44423857E3300F8DDF4 /* UIViewController+Utils.swift */; };
+		617DA44C23857E3300F8DDF4 /* PanelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617DA44523857E3300F8DDF4 /* PanelConfiguration.swift */; };
+		617DA44D23857E3300F8DDF4 /* Panels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617DA44623857E3300F8DDF4 /* Panels.swift */; };
+		617DA44E23857E3300F8DDF4 /* PanelDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617DA44723857E3300F8DDF4 /* PanelDimensions.swift */; };
 		8933C7901EB5B82D000D00A4 /* PanelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* PanelsTests.swift */; };
-		C42BAE5F21381B30008F7242 /* PanelDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42BAE5E21381B30008F7242 /* PanelDimensions.swift */; };
-		C46B14EF211DB5D70019D32A /* Panels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B14EE211DB5D70019D32A /* Panels.swift */; };
-		C46B14F2211DCEF30019D32A /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B14F1211DCEF30019D32A /* UIView+Utils.swift */; };
-		C46B14F4211DCF110019D32A /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B14F3211DCF110019D32A /* UIViewController+Utils.swift */; };
-		C46B14F6211DCF3F0019D32A /* Panelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B14F5211DCF3F0019D32A /* Panelable.swift */; };
-		C46B14F8211DCFC80019D32A /* PanelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B14F7211DCFC80019D32A /* PanelConfiguration.swift */; };
-		C4C44C7B216BF4F900044599 /* UIStoryBoard+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C44C7A216BF4F900044599 /* UIStoryBoard+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,16 +31,16 @@
 /* Begin PBXFileReference section */
 		52D6D97C1BEFF229002C0205 /* Panels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Panels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* Panels-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Panels-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		617DA44023857E3300F8DDF4 /* Panelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panelable.swift; sourceTree = "<group>"; };
+		617DA44223857E3300F8DDF4 /* UIStoryBoard+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryBoard+Utils.swift"; sourceTree = "<group>"; };
+		617DA44323857E3300F8DDF4 /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		617DA44423857E3300F8DDF4 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		617DA44523857E3300F8DDF4 /* PanelConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelConfiguration.swift; sourceTree = "<group>"; };
+		617DA44623857E3300F8DDF4 /* Panels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panels.swift; sourceTree = "<group>"; };
+		617DA44723857E3300F8DDF4 /* PanelDimensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelDimensions.swift; sourceTree = "<group>"; };
 		8933C7891EB5B82A000D00A4 /* PanelsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelsTests.swift; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* Panels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Panels.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* PanelsTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PanelsTests.plist; sourceTree = "<group>"; };
-		C42BAE5E21381B30008F7242 /* PanelDimensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelDimensions.swift; sourceTree = "<group>"; };
-		C46B14EE211DB5D70019D32A /* Panels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panels.swift; sourceTree = "<group>"; };
-		C46B14F1211DCEF30019D32A /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
-		C46B14F3211DCF110019D32A /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
-		C46B14F5211DCF3F0019D32A /* Panelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panelable.swift; sourceTree = "<group>"; };
-		C46B14F7211DCFC80019D32A /* PanelConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelConfiguration.swift; sourceTree = "<group>"; };
-		C4C44C7A216BF4F900044599 /* UIStoryBoard+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryBoard+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,14 +90,32 @@
 			path = Configs;
 			sourceTree = "<group>";
 		};
+		617DA43F23857E3300F8DDF4 /* Panels */ = {
+			isa = PBXGroup;
+			children = (
+				617DA44123857E3300F8DDF4 /* Utils */,
+				617DA44023857E3300F8DDF4 /* Panelable.swift */,
+				617DA44523857E3300F8DDF4 /* PanelConfiguration.swift */,
+				617DA44623857E3300F8DDF4 /* Panels.swift */,
+				617DA44723857E3300F8DDF4 /* PanelDimensions.swift */,
+			);
+			path = Panels;
+			sourceTree = "<group>";
+		};
+		617DA44123857E3300F8DDF4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				617DA44223857E3300F8DDF4 /* UIStoryBoard+Utils.swift */,
+				617DA44323857E3300F8DDF4 /* UIView+Utils.swift */,
+				617DA44423857E3300F8DDF4 /* UIViewController+Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		8933C7811EB5B7E0000D00A4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				C46B14F0211DCED70019D32A /* Utils */,
-				C46B14EE211DB5D70019D32A /* Panels.swift */,
-				C46B14F5211DCF3F0019D32A /* Panelable.swift */,
-				C42BAE5E21381B30008F7242 /* PanelDimensions.swift */,
-				C46B14F7211DCFC80019D32A /* PanelConfiguration.swift */,
+				617DA43F23857E3300F8DDF4 /* Panels */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -109,16 +127,6 @@
 			);
 			name = Tests;
 			path = Tests/PanelsTests;
-			sourceTree = "<group>";
-		};
-		C46B14F0211DCED70019D32A /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				C4C44C7A216BF4F900044599 /* UIStoryBoard+Utils.swift */,
-				C46B14F1211DCEF30019D32A /* UIView+Utils.swift */,
-				C46B14F3211DCF110019D32A /* UIViewController+Utils.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		DD7502721C68FC1B006590AF /* Frameworks */ = {
@@ -211,6 +219,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 52D6D9721BEFF229002C0205;
@@ -246,13 +255,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C46B14F4211DCF110019D32A /* UIViewController+Utils.swift in Sources */,
-				C46B14EF211DB5D70019D32A /* Panels.swift in Sources */,
-				C42BAE5F21381B30008F7242 /* PanelDimensions.swift in Sources */,
-				C46B14F2211DCEF30019D32A /* UIView+Utils.swift in Sources */,
-				C4C44C7B216BF4F900044599 /* UIStoryBoard+Utils.swift in Sources */,
-				C46B14F8211DCFC80019D32A /* PanelConfiguration.swift in Sources */,
-				C46B14F6211DCF3F0019D32A /* Panelable.swift in Sources */,
+				617DA44B23857E3300F8DDF4 /* UIViewController+Utils.swift in Sources */,
+				617DA44923857E3300F8DDF4 /* UIStoryBoard+Utils.swift in Sources */,
+				617DA44E23857E3300F8DDF4 /* PanelDimensions.swift in Sources */,
+				617DA44D23857E3300F8DDF4 /* Panels.swift in Sources */,
+				617DA44A23857E3300F8DDF4 /* UIView+Utils.swift in Sources */,
+				617DA44C23857E3300F8DDF4 /* PanelConfiguration.swift in Sources */,
+				617DA44823857E3300F8DDF4 /* Panelable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +443,7 @@
 		52D6D9941BEFF229002C0205 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Configs/PanelsTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -447,6 +457,7 @@
 		52D6D9951BEFF229002C0205 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Configs/PanelsTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
