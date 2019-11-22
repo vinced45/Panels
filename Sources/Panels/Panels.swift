@@ -71,11 +71,12 @@ public class Panels {
 
     /// Close the panel
     @objc public func collapsePanel() {
-        guard isExpanded, let container = containerView else {
-            return
-        }
-        movePanel(value: configuration.visibleArea())
-        container.endEditing(true)
+//        guard isExpanded, let container = containerView else {
+//            return
+//        }
+//        movePanel(value: configuration.visibleArea())
+//        container.endEditing(true)
+        dismiss(completion: nil)
     }
 
     public func dismiss(completion: (() -> Void)? = nil) {
