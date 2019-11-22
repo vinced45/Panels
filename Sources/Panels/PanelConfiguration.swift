@@ -22,12 +22,6 @@ public struct PanelConfiguration {
     /// Safe area is avoided if this flag is true.
     public var useSafeArea = true
 
-    /// Collapse and expand when tapping the header view.
-    public var respondToTap = true
-
-    /// Collapse and expand when dragging the header view.
-    public var respondToDrag = true
-
     /// Collapse when tapping outside the panel
     public var closeOutsideTap = true
 

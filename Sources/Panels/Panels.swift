@@ -48,9 +48,17 @@ public class Panels {
         panel.hideKeyboardAutomatically()
         registerKeyboardNotifications()
         // Prepare the view placement, saving the safeArea.
-        panelHeight = config.heightConstant ?? panel.headerHeight.constant
-        panel.headerHeight.constant = panelHeight + UIApplication.safeAreaBottom()
-        setupGestures(headerView: panel.headerPanel, superview: container)
+        //panelHeight = config.heightConstant ?? panel.headerHeight.constant
+        //panel.headerHeight.constant = panelHeight + UIApplication.safeAreaBottom()
+        setupGestures(superview: container)
+    }
+    
+    /// Shows panel then immediately expands
+    public func present(panel: Panelable & UIViewController,
+                        config: PanelConfiguration = PanelConfiguration(),
+                        view: UIView? = nil) {
+        show(panel: panel, config: config, view: view)
+        expandPanel()
     }
 
     /// Opens the panel
@@ -71,7 +79,6 @@ public class Panels {
     }
 
     public func dismiss(completion: (() -> Void)? = nil) {
-        panel?.headerHeight.constant = panelHeight
         guard let panelView = self.panel?.view else {
             completion?()
             return
@@ -96,9 +103,9 @@ public class Panels {
 extension Panels {
     private func movePanel(value: CGFloat, keyboard: Bool = false, completion: (() -> Void)? = nil) {
         panelHeightConstraint?.constant = value
-        if !keyboard {
-            panel?.headerHeight.constant += isExpanded ? -UIApplication.safeAreaBottom() : UIApplication.safeAreaBottom()
-        }
+//        if !keyboard {
+//            panel?.headerHeight.constant += isExpanded ? -UIApplication.safeAreaBottom() : UIApplication.safeAreaBottom()
+//        }
         isExpanded ? delegate?.panelDidOpen() : delegate?.panelDidCollapse()
         containerView?.animateLayoutBounce(completion: completion) ?? completion?()
     }
@@ -172,22 +179,7 @@ extension Panels {
 // MARK: Gesture control
 
 extension Panels {
-    private func setupGestures(headerView: UIView, superview _: UIView) {
-        // Expand and collapse:
-        if configuration.respondToTap {
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-            headerView.addGestureRecognizer(tapGesture)
-        }
-
-        if configuration.respondToDrag {
-            let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(expandPanel))
-            swipeUp.direction = .up
-            headerView.addGestureRecognizer(swipeUp)
-            let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(collapsePanel))
-            swipeDown.direction = .down
-            headerView.addGestureRecognizer(swipeDown)
-        }
-
+    private func setupGestures(superview _: UIView) {
         if configuration.closeOutsideTap {
             let tapGestureOutside = UITapGestureRecognizer(target: self, action: #selector(collapsePanel))
             tapGestureOutside.cancelsTouchesInView = false

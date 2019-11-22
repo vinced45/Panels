@@ -11,10 +11,10 @@ import UIKit
 /// Protocol to be conformed by the views presented as Panels.
 public protocol Panelable: AnyObject {
     /// Constraint that controls the header panel height
-    var headerHeight: NSLayoutConstraint! { get set }
+    //var headerHeight: NSLayoutConstraint! { get set }
 
     /// View container that contains the view that is presented when the panel is collapsed.
-    var headerPanel: UIView! { get }
+    //var headerPanel: UIView! { get }
 }
 
 /// Protocol to get panel notifications. This protocol is optional. Useful when you want to concat
