@@ -117,9 +117,9 @@ extension Panels {
             view.addSubview(dimView)
             
             // Deal with Auto Layout
-            dimView.translatesAutoresizingMaskIntoConstraints = false
-            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|[dimView]|", options: [], metrics: nil, views: ["dimView": dimView]))
-            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[dimView]|", options: [], metrics: nil, views: ["dimView": dimView]))
+//            dimView.translatesAutoresizingMaskIntoConstraints = false
+//            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|[dimView]|", options: [], metrics: nil, views: ["dimView": dimView]))
+//            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[dimView]|", options: [], metrics: nil, views: ["dimView": dimView]))
             
             // Animate alpha (the actual "dimming" effect)
             UIView.animate(withDuration: configuration.entryAnimationDuration) { () -> Void in
