@@ -57,7 +57,7 @@ public class Panels {
     public func present(panel: Panelable & UIViewController,
                         config: PanelConfiguration = PanelConfiguration(),
                         view: UIView? = nil) {
-        toggleDimming(show: true)
+        //toggleDimming(show: true)
         show(panel: panel, config: config, view: view)
         expandPanel()
     }
@@ -77,7 +77,7 @@ public class Panels {
 //        }
 //        movePanel(value: configuration.visibleArea())
 //        container.endEditing(true)
-        toggleDimming(show: false)
+        //toggleDimming(show: false)
         dismiss(completion: nil)
     }
 
@@ -86,7 +86,7 @@ public class Panels {
             completion?()
             return
         }
-        toggleDimming(show: false)
+        //toggleDimming(show: false)
         UIView.animate(withDuration: configuration.dismissAnimationDuration, animations: {
             panelView.frame.origin = CGPoint(x: 0, y: self.containerView!.frame.size.height)
         }) { _ in
