@@ -57,6 +57,7 @@ public class Panels {
     public func present(panel: Panelable & UIViewController,
                         config: PanelConfiguration = PanelConfiguration(),
                         view: UIView? = nil) {
+        toggleDimming(show: true)
         show(panel: panel, config: config, view: view)
         expandPanel()
     }
@@ -76,6 +77,7 @@ public class Panels {
 //        }
 //        movePanel(value: configuration.visibleArea())
 //        container.endEditing(true)
+        toggleDimming(show: false)
         dismiss(completion: nil)
     }
 
@@ -84,7 +86,7 @@ public class Panels {
             completion?()
             return
         }
-
+        toggleDimming(show: false)
         UIView.animate(withDuration: configuration.dismissAnimationDuration, animations: {
             panelView.frame.origin = CGPoint(x: 0, y: self.containerView!.frame.size.height)
         }) { _ in
@@ -102,6 +104,36 @@ public class Panels {
 // MARK: Private functions
 
 extension Panels {
+    private func toggleDimming(show: Bool) {
+        guard let view = containerView else {
+            return
+        }
+        
+        if show {
+            // Create and add a dim view
+            let dimView = UIView(frame:view.frame)
+            dimView.backgroundColor = .black
+            dimView.alpha = 0.0
+            view.addSubview(dimView)
+            
+            // Deal with Auto Layout
+            dimView.translatesAutoresizingMaskIntoConstraints = false
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|[dimView]|", options: [], metrics: nil, views: ["dimView": dimView]))
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[dimView]|", options: [], metrics: nil, views: ["dimView": dimView]))
+            
+            // Animate alpha (the actual "dimming" effect)
+            UIView.animate(withDuration: configuration.entryAnimationDuration) { () -> Void in
+                dimView.alpha = 0.7
+            }
+        } else {
+            UIView.animate(withDuration: configuration.entryAnimationDuration, animations: { () -> Void in
+                view.subviews.last?.alpha = 0
+                }, completion: { (complete) -> Void in
+                    view.subviews.last?.removeFromSuperview()
+            })
+        }
+    }
+    
     private func movePanel(value: CGFloat, keyboard: Bool = false, completion: (() -> Void)? = nil) {
         panelHeightConstraint?.constant = value
 //        if !keyboard {
