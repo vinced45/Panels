@@ -77,7 +77,6 @@ public class Panels {
 //        }
 //        movePanel(value: configuration.visibleArea())
 //        container.endEditing(true)
-        toggleDimming(show: false)
         dismiss(completion: nil)
     }
 
@@ -128,12 +127,12 @@ extension Panels {
                                          dimView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
             
             // Animate alpha (the actual "dimming" effect)
-            UIView.animate(withDuration: configuration.entryAnimationDuration) { () -> Void in
+            UIView.animate(withDuration: 0.3) { () -> Void in
                 dimView.alpha = 0.7
             }
         } else {
             for v in view.subviews where v.tag == viewtag {
-                UIView.animate(withDuration: configuration.entryAnimationDuration, animations: { () -> Void in
+                UIView.animate(withDuration: 0.3, animations: { () -> Void in
                     v.alpha = 0
                     }, completion: { (complete) -> Void in
                         v.removeFromSuperview()
