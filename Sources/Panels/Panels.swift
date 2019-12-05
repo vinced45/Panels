@@ -34,6 +34,7 @@ public class Panels {
         assert(self.panel == nil, "You are trying to push a panel without dismiss the previous one.")
         configuration = config
         containerView = view ?? parentViewController?.view
+        toggleDimming(show: true)
         self.panel = panel
         parentViewController?.addContainer(container: panel)
         guard let container = containerView else {
@@ -57,7 +58,6 @@ public class Panels {
     public func present(panel: Panelable & UIViewController,
                         config: PanelConfiguration = PanelConfiguration(),
                         view: UIView? = nil) {
-        toggleDimming(show: true)
         show(panel: panel, config: config, view: view)
         expandPanel()
     }
