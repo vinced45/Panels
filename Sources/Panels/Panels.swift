@@ -121,7 +121,7 @@ extension Panels {
             
             // Deal with Auto Layout
             dimView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([dimView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            NSLayoutConstraint.activate([dimView.topAnchor.constraint(equalTo: view.topAnchor, constant: -40),
                                          dimView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
                                          dimView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: 0),
                                          dimView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
