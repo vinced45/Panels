@@ -57,7 +57,7 @@ public class Panels {
     public func present(panel: Panelable & UIViewController,
                         config: PanelConfiguration = PanelConfiguration(),
                         view: UIView? = nil) {
-        //toggleDimming(show: true)
+        toggleDimming(show: true)
         show(panel: panel, config: config, view: view)
         expandPanel()
     }
@@ -77,7 +77,7 @@ public class Panels {
 //        }
 //        movePanel(value: configuration.visibleArea())
 //        container.endEditing(true)
-        //toggleDimming(show: false)
+        toggleDimming(show: false)
         dismiss(completion: nil)
     }
 
@@ -86,7 +86,7 @@ public class Panels {
             completion?()
             return
         }
-        //toggleDimming(show: false)
+        toggleDimming(show: false)
         UIView.animate(withDuration: configuration.dismissAnimationDuration, animations: {
             panelView.frame.origin = CGPoint(x: 0, y: self.containerView!.frame.size.height)
         }) { _ in
@@ -109,28 +109,36 @@ extension Panels {
             return
         }
         
+        let viewtag = 9999
+        
         if show {
             // Create and add a dim view
-            let dimView = UIView(frame:view.frame)
+            let dimView = UIView(frame: view.frame)
             dimView.backgroundColor = .black
             dimView.alpha = 0.0
+            dimView.tag = viewtag
             view.addSubview(dimView)
+            view.bringSubviewToFront(dimView)
             
             // Deal with Auto Layout
-//            dimView.translatesAutoresizingMaskIntoConstraints = false
-//            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|[dimView]|", options: [], metrics: nil, views: ["dimView": dimView]))
-//            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[dimView]|", options: [], metrics: nil, views: ["dimView": dimView]))
+            dimView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([dimView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+                                         dimView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+                                         dimView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: 0),
+                                         dimView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
             
             // Animate alpha (the actual "dimming" effect)
             UIView.animate(withDuration: configuration.entryAnimationDuration) { () -> Void in
                 dimView.alpha = 0.7
             }
         } else {
-            UIView.animate(withDuration: configuration.entryAnimationDuration, animations: { () -> Void in
-                view.subviews.last?.alpha = 0
-                }, completion: { (complete) -> Void in
-                    view.subviews.last?.removeFromSuperview()
-            })
+            for v in view.subviews where v.tag == viewtag {
+                UIView.animate(withDuration: configuration.entryAnimationDuration, animations: { () -> Void in
+                    v.alpha = 0
+                    }, completion: { (complete) -> Void in
+                        v.removeFromSuperview()
+                })
+            }
         }
     }
     
