@@ -211,8 +211,16 @@ extension Panels {
         }
     }
 
-    @objc private func keyboardWillHide(notification _: Notification) {
-        collapsePanel()
+    @objc private func keyboardWillHide(notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = CGFloat(keyboardRectangle.height)
+            containerView.then {
+                let currentValue = isExpanded ? configuration.size(for: $0) : configuration.visibleArea()
+                movePanel(value: currentValue - keyboardHeight)
+            }
+        }
+//        collapsePanel()
     }
 }
 
