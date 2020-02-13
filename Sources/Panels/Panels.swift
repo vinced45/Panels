@@ -17,6 +17,8 @@ public class Panels {
     private weak var panelHeightConstraint: NSLayoutConstraint?
     private lazy var configuration: PanelConfiguration = PanelConfiguration()
     private var panelHeight: CGFloat = 0.0
+    
+    var dimView: UIView?
 
     public init(target: UIViewController) {
         parentViewController = target
@@ -83,6 +85,7 @@ public class Panels {
     public func dismiss(completion: (() -> Void)? = nil) {
         guard let panelView = self.panel?.view else {
             completion?()
+
             return
         }
         toggleDimming(show: false)
@@ -112,7 +115,9 @@ extension Panels {
         
         if show {
             // Create and add a dim view
-            let dimView = UIView(frame: view.frame)
+            dimView = UIView(frame: view.frame)
+            
+            guard let dimView = self.dimView else { return }
             dimView.backgroundColor = .black
             dimView.alpha = 0.0
             dimView.tag = viewtag
@@ -231,7 +236,7 @@ extension Panels {
         if configuration.closeOutsideTap {
             let tapGestureOutside = UITapGestureRecognizer(target: self, action: #selector(collapsePanel))
             tapGestureOutside.cancelsTouchesInView = false
-            containerView?.addGestureRecognizer(tapGestureOutside)
+            dimView?.addGestureRecognizer(tapGestureOutside)
         }
     }
 
