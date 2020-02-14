@@ -39,6 +39,7 @@ public class Panels {
         toggleDimming(show: true)
         self.panel = panel
         parentViewController?.addContainer(container: panel)
+        parentViewController?.view.endEditing(true)
         guard let container = containerView else {
             fatalError("No parent view available")
         }
